@@ -13,5 +13,14 @@ def home():
 def allcards():
     return render_template("allcards.html")
 
+
+@app.route("/arenas")
+def arenas():
+    return render_template("arenas.html")
+
+@app.route("/cardtype")
+def cardtype():
+    return render_template("cardtype.html")
+
 if __name__ == "__main__":
     app.run(debug=True)

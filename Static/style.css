@@ -1,4 +1,11 @@
 .homepage{
-    background-image: url(/static/images/download.png);
+    background-image: url("/static/images/download.png");
     background-size:cover;
+    height: 1080px;
   }
+
+  html{
+    background-color: brown;
+  }
+
+  

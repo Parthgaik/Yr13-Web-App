@@ -1,11 +1,20 @@
+@font-face{
+  font-family: Clashroyalefont;
+  src: url(YouBlockhead.ttf)
+}
+
+
 .homepage{
-    background-image: url("/static/images/download.png");
-    background-size:cover;
-    height: 1080px;
-  }
+  background-image: url("/static/images/download.png");
+  background-size:cover;
+  height: 1080px;
+}
 
   html{
-    background-color: brown;
+    background-color: rgb(20, 53, 102);
   }
 
-  
+.navtext{
+  font-family: Clashroyalefont;
+  color: rgb(238, 238, 29)
+}

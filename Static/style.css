@@ -16,7 +16,7 @@ html{
 .column2{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 1000px;
+  height: auto;
 }
 
 body{

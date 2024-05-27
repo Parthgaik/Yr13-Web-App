@@ -1,3 +1,13 @@
+*{
+  margin: 0;
+
+}
+
+img{
+  width: 100%;
+}
+
+
 @font-face{
   font-family: Clashroyalefont;
   src: url(YouBlockhead.ttf)
@@ -13,11 +23,14 @@ html{
   color: rgb(238, 238, 29)
 }
 
-.column2{
+.column2horizontal{
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: auto;
+  gap: 30px;
 }
+
+
 
 body{
   width: 80%;
@@ -25,4 +38,25 @@ body{
   margin:auto;
   background-color: rgb(20, 53, 102);
   
+}
+
+
+.navimage{
+  height: 85px;
+  width: 210px;
+}
+
+
+ul{
+  list-style-type: none;
+  overflow: hidden;
+}
+
+ul li{
+  float: right;
+}
+
+.navgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }

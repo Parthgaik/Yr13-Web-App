@@ -10,7 +10,8 @@ img{
 
 @font-face{
   font-family: Clashroyalefont;
-  src: url(YouBlockhead.ttf)
+  src: url(YouBlockhead.ttf);
+  color: rgb(238, 238, 29);
 }
 
 
@@ -18,10 +19,11 @@ html{
   background-color: rgb(89, 71, 170);
 }
 
-.navtext{
+*{
   font-family: Clashroyalefont;
   color: rgb(238, 238, 29)
 }
+
 
 .column2horizontal{
   display: grid;

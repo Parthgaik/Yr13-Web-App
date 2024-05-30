@@ -1,11 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>This is the all cards page</title>
-</head>
+{% extends "layout.html" %}
+{% block content %}
+
+
 <body>
-    <a>hello</a>
+    <div>
+        {% for card in cards %}
+        <div>   <a href="/cards/{{cards[0]}}"></a>       </div>
+
+    </div>
+
+
+
 </body>
-</html>
+
+
+
+
+
+
+{% endblock %}

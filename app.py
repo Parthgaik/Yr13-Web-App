@@ -4,14 +4,33 @@ import sqlite3
 app = Flask(__name__)
 
 
+def connect_database(statement, id=None):
+    conn = sqlite3.connect("Yr13ClashRoyaleDB.db")
+    cursor = conn.cursor()
+    if id is not None:
+        cursor.execute(statement, id)
+    else:
+        cursor.execute(statement)
+    results = cursor.fetchall()
+    conn.close()
+    return results
+
+
+
+
+
+
+
 @app.route("/")
 def home():
-    return render_template("home.html", title="Home" )
+    return render_template("home.html", title="Home")
 
 
 @app.route("/allcards")
 def allcards():
-    return render_template("allcards.html")
+    allcards = connect_database("SELECT id, name FROM Card")
+    print(allcards, allcards[0])
+    return render_template("allcards.html", title="All Cards")
 
 
 @app.route("/arenas")

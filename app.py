@@ -28,7 +28,7 @@ def home():
 
 @app.route("/allcards")
 def allcards():
-    allcards = connect_database("SELECT id, name FROM Card")
+    allcards = connect_database("SELECT id, name FROM Cards")
     print(allcards, allcards[0])
     return render_template("allcards.html", title="All Cards")
 

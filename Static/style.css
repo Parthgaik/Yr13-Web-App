@@ -3,9 +3,6 @@
 
 }
 
-img{
-  width: 100%;
-}
 
 
 @font-face{
@@ -14,12 +11,14 @@ img{
   color: rgb(238, 238, 29);
 }
 
+/*Main body stuff of website*/
+
 
 html{
   background-color: rgb(89, 71, 170);
 }
 
-*{
+.hometext{
   font-family: Clashroyalefont;
   color: rgb(238, 238, 29)
 }
@@ -48,17 +47,16 @@ body{
   width: 210px;
 }
 
-
-ul{
-  list-style-type: none;
-  overflow: hidden;
-}
-
-ul li{
-  float: right;
-}
-
 .navgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+
+/*Clash Royale Data Styling*/
+
+.cardimagegrid{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }

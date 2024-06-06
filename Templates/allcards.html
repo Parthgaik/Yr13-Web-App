@@ -3,9 +3,12 @@
 
 
 <body>
-    <div>
+    <div class = "cardimagegrid">
         {% for card in cards %}
-        <div>   <a href="/cards/{{cards[0]}}"></a>       </div>
+        <div>  
+            <a href="/cards/{{cards[0]}}">
+            <img src="/static/cardimages/{{card[2]}}">  <p>{{card[1]}}</p></a>       
+        </div>
         {%endfor%}
     </div>
 

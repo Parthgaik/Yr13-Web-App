@@ -14,6 +14,13 @@
 /*Main body stuff of website*/
 
 
+.singlecard{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: auto;
+  gap: 30px;
+}
+
 html{
   background-color: rgb(89, 71, 170);
 }

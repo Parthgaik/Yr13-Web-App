@@ -32,6 +32,12 @@ def allcards():
     print(allcards, allcards[0])
     return render_template("allcards.html", title="All Cards", cards=allcards)
 
+@app.route("/card")
+def card():
+    card = connect_database("SELECT id, name, Image FROM Cards")
+    print(card, card[0])
+    return render_template("card.html", title="{card[1]}", card=card)
+
 
 @app.route("/arenas")
 def arenas():

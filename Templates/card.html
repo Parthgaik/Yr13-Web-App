@@ -1,24 +1,11 @@
 {% extends "layout.html" %}
 {% block content %}
 
-
-<body class = "singlecard">
-    <div>
-        {% for card in card %}
-        <div>  
-            <a href="/cards/{{cards[0]}}">
-            <img src="/static/cardimages/{{card[2]}}">  <p class = "maintext">{{card[1]}}</p></a>       
-        </div>
-        {%endfor%}
-    </div>
+<body>
+<main>
+{{card}}
 
 
-
+</main>
 </body>
-
-
-
-
-
-
 {% endblock %}

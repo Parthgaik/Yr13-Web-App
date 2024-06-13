@@ -2,8 +2,18 @@
 {% block content %}
 
 <body>
+    <div class = "singlecard">
+        {% for card in card %}
+        <div>  
+            <img src="/static/cardimages/{{card[2]}}">  <p class = "maintext">{{card[1]}}</p></a>       
+        </div>
+        {%endfor%}
+    </div>
+
+
+
 <main>
-{{card}}
+
 
 
 </main>

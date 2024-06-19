@@ -13,6 +13,11 @@
 
 /*Main body stuff of website*/
 
+.fourcolumns{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
 
 .singlecard{
   display: grid;

@@ -35,7 +35,8 @@ def allcards():
 @app.route("/card/<int:id>")
 def card(id):
     card = connect_database("SELECT id, name, Image, description FROM Cards WHERE id = ?", (id,))
-    return render_template("card.html", card=card[0])
+    counters = connect_database("SELECT Cards.Name, Cards.Image FROM Counters JOIN Cards ON Counters.CounterID = Cards.id WHERE CardID = ?", (id,))
+    return render_template("card.html", card=card[0], counters=counters)
 
 
 @app.route("/arenas")

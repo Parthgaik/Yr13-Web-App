@@ -12,6 +12,14 @@
         </div>
         <div>
             <p>{{card[3]}}</p>
+            <div class ="fourcolumns">
+            {%for counter in counters%}
+                <div>
+                    {{counter}}
+                    <img src="/static/cardimages/{{counter[2]}}"> <p class ="maintext"></p>
+                </div>
+            {%endfor%}    
+            </div>
         </div>
     </div>
 </body>

@@ -5,9 +5,9 @@
     
     
     
+    <h1 class="cardnamealign">{{card[1]}}</h1>
     <div class = "singlecard">
         <div>  
-            <h1>{{card[1]}}</h1>
             <img src="/static/cardimages/{{card[2]}}"> <p class ="maintext"></p>
         </div>
         <div>
@@ -16,7 +16,7 @@
             {%for counter in counters%}
                 <div>
                     {{counter}}
-                    <img src="/static/cardimages/{{counter[2]}}"> <p class ="maintext"></p>
+                    <img src="/static/cardimages/{{counter[1]}}"> <p class ="maintext"></p>
                 </div>
             {%endfor%}    
             </div>

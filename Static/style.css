@@ -13,6 +13,15 @@
 
 /*Main body stuff of website*/
 
+.cardnamealign{
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background-color: magenta;
+  border-radius: 15px;
+  color: black;
+}
+
 .fourcolumns{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;

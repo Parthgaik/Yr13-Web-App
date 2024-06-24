@@ -15,8 +15,8 @@
             <div class ="fourcolumns">
             {%for counter in counters%}
                 <div>
-                    {{counter}}
-                    <img src="/static/cardimages/{{counter[1]}}"> <p class ="maintext"></p>
+                    {{counter[0]}}
+                    <img src="/static/cardimages/{{counter[1]}}" alt="no image yet"> <p class ="maintext"></p>
                 </div>
             {%endfor%}    
             </div>

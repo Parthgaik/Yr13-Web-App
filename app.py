@@ -34,6 +34,7 @@ def allcards():
 
 @app.route("/card/<int:id>")
 def card(id):
+    if id > 
     card = connect_database("SELECT id, name, Image, description FROM Cards WHERE id = ?", (id,))
     counters = connect_database("SELECT Cards.Name, Cards.Image FROM Counters JOIN Cards ON Counters.CounterID = Cards.id WHERE CardID = ?", (id,))
     print(card)
@@ -48,6 +49,12 @@ def arenas():
 @app.route("/cardtype")
 def cardtype():
     return render_template("cardtype.html")
+
+
+@app.errorhandler(404)
+def pagenotfound(e):
+    return render_template("/404.html", error=e),404
+    
 
 
 if __name__ == "__main__":

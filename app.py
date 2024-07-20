@@ -31,7 +31,7 @@ def allcards():
 
 
 minimum_id = 1
-
+maximum_id = 104
 
 @app.route("/card/<int:id>")
 def card(id):

@@ -22,16 +22,34 @@
   color: black;
 }
 
-.fourcolumns{
+.threecolumns{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 300px 300px 300px;
   gap: 10px;
   padding-top: 20px;
+  border: 2px solid red
+}
+
+.cardcounters{
+  display: flex;
+  justify-content: center;
+  border: 2px solid rgb(238, 238, 29);
+  flex-wrap: wrap;
+}
+
+
+.cardstyling{
+  height: 357px;
+  width: 300px;
+}
+
+.description{
+  font-size: x-large;
 }
 
 .singlecard{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 300px 1200px;
   height: auto;
   gap: 30px;
 }
@@ -58,14 +76,19 @@ html{
   gap: 30px;
 }
 
+.boarder-colour1{
+  border: 2px solid red;
+  display: flex;
+  justify-content: center;
+}
 
 
 body{
   width: 80%;
-  height: 100%;
   margin:auto;
   background-color: rgb(20, 53, 102);
-  
+  background-attachment: fixed;
+  background-repeat: repeat;
 }
 
 

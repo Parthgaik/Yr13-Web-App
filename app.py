@@ -41,7 +41,7 @@ def card(id):
     if id < minimum_id:
         abort(404)
     card = connect_database("SELECT id, name, Image, description FROM Cards WHERE id = ?", (id,))
-    counters = connect_database("SELECT Cards.Name, Cards.Image FROM Counters JOIN Cards ON Counters.CounterID = Cards.id WHERE CardID = ?", (id,))
+    counters = connect_database("SELECT Cards.Name, Cards.Image, Counters.CounterID FROM Counters JOIN Cards ON Counters.CounterID = Cards.id WHERE CardID = ?", (id,))
     print(card)
     return render_template("card.html", title=card[0][1], card=card[0], counters=counters)
 

@@ -24,10 +24,11 @@ def home():
     return render_template("home.html", title="Home")
 
 
-@app.route("/allcards")
-def allcards():
-    allcards = connect_database("SELECT id, name, Image FROM Cards")
-    return render_template("allcards.html", title="All Cards", cards=allcards)
+@app.route("/allcards/<int:id>")
+def allcards(id):
+    allcards = connect_database("SELECT id, name, Image FROM Cards WHERE Rarity = ?", (id,))
+    rarity= connect_database("SELECT MAX(id) FROM Rarity")
+    return render_template("allcards.html", title="All Cards", cards=allcards, id=id, rarity=rarity)
 
 
 minimum_id = 1
@@ -40,10 +41,10 @@ def card(id):
         abort(404)
     if id < minimum_id:
         abort(404)
-    card = connect_database("SELECT id, name, Image, description FROM Cards WHERE id = ?", (id,))
+    card = connect_database("SELECT id, name, Image, description, TypeID FROM Cards WHERE id = ?", (id,))
     counters = connect_database("SELECT Cards.Name, Cards.Image, Counters.CounterID FROM Counters JOIN Cards ON Counters.CounterID = Cards.id WHERE CardID = ?", (id,))
     print(card)
-    return render_template("card.html", title=card[0][1], card=card[0], counters=counters)
+    return render_template("card.html", title=card[0][1], card=card[0], counters=counters, id=id)
 
 
 @app.route("/arenas")

@@ -10,7 +10,13 @@
             <img src="/static/cardimages/{{card[2]}}">  <p class = "maintext">{{card[1]}}</p></a>       
         </div>
         {%endfor%}
-    </div>
+    </div> 
+    {%if id > 1%}
+    <a href="/allcards/{{id-1}}"><p class="Backbutton">Back</p></a>
+    {%endif%}
+    {%if id < rarity[0][0]%}
+    <a href="/allcards/{{id+1}}"><p class="Nextbutton">Next</p></a>
+    {%endif%}
 
 
 

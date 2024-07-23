@@ -37,6 +37,15 @@
   flex-wrap: wrap;
 }
 
+.Nextbutton{
+  float: right;
+  color: rgb(238, 238, 29);
+  clear: both;
+}
+
+.Backbutton{
+  color: rgb(238, 238, 29);
+}
 
 .cardstyling{
   height: 357px;

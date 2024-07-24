@@ -13,13 +13,13 @@
         <div class ="boarder-colour2">
             <div class="description"><p>{{card[3]}}</p></div>
             {%if card[4] != 3 %}
-            <p>Counter For This Card Are:</p>
+            <p class="counterforthiscard">Counter For This Card Are:</p>
             {%endif%}
             <div class ="threecolumns">
             {%for counter in counters%}
                 <a href="/card/{{counter[2]}}"><div class="cardcounters">
                     {{counter[0]}}
-                    <img src="/static/cardimages/{{counter[1]}}" alt="no image yet"> <p class ="maintext"></p>
+                    <img class="ccimagesize" src="/static/cardimages/{{counter[1]}}" alt="no image yet"> <p class ="maintext"></p>
                 </div>
                 </a>
             {%endfor%}    

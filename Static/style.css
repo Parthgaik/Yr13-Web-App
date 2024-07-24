@@ -37,14 +37,25 @@
   flex-wrap: wrap;
 }
 
+.ccimagesize{
+  height:431.6px;
+  width:360px;
+}
+
+.next_backstyling{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
 .Nextbutton{
   float: right;
   color: rgb(238, 238, 29);
-  clear: both;
+  font-family: Clashroyalefont;
 }
 
 .Backbutton{
   color: rgb(238, 238, 29);
+  font-family: Clashroyalefont;
 }
 
 .cardstyling{
@@ -52,15 +63,27 @@
   width: 300px;
 }
 
+.centeraligncardimage{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
 .description{
-  font-size: x-large;
+  font-size: xx-large;
+}
+
+.counterforthiscard{
+  padding-top: 10px;
+  font-size: xx-large;
 }
 
 .singlecard{
   display: grid;
   grid-template-columns: 300px 1200px;
-  height: auto;
-  gap: 30px;
+  height: 735px;
+  gap: 40px;
 }
 
 html{
@@ -89,15 +112,19 @@ html{
   border: 2px solid red;
   display: flex;
   justify-content: center;
+  padding-top: 70px;
 }
 
 
 body{
+  height: auto;
   width: 80%;
   margin:auto;
   background-color: rgb(20, 53, 102);
   background-attachment: fixed;
   background-repeat: repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 

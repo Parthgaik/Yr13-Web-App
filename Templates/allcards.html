@@ -5,13 +5,23 @@
 <body>
     <div class = "cardimagegrid">
         {% for card in cards %}
-        <div>  
+        <div class="centeraligncardimage">  
             <a href="/card/{{card[0]}}">
             <img src="/static/cardimages/{{card[2]}}">  <p class = "maintext">{{card[1]}}</p></a>       
         </div>
         {%endfor%}
+    </div> 
+    <div class="next_backstyling">
+    
+    {%if id > 1%}
+    <a href="/allcards/{{id-1}}"><p class="Backbutton">Back</p></a>
+    {%else%}
+    <p></p>
+    {%endif%}
+    {%if id < rarity[0][0]%}
+    <a href="/allcards/{{id+1}}"><p class="Nextbutton">Next</p></a>
+    {%endif%}
     </div>
-
 
 
 </body>

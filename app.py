@@ -47,7 +47,7 @@ minimum_idcards = 1
 
 @app.route("/allcards/<int:id>")
 def allcards(id):
-    maximum_idcards = connect_database("SELECT MAX(id) FROM Cards")
+    maximum_idcards = connect_database("SELECT MAX(id) FROM Rarity")
     if id > maximum_idcards[0][0]:
         abort(404)
     if id < minimum_idcards:

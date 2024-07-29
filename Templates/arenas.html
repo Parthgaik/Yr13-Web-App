@@ -3,25 +3,15 @@
 
 
 <body>
-    <div>
-        {% for card in cards %}
+    <div class = "cardimagegrid">
+        {% for arena in arenas %}
         <div class="centeraligncardimage">  
-            <a href="/card/{{card[0]}}">
-            <img src="/static/cardimages/{{card[2]}}">  <p class = "maintext">{{card[1]}}</p></a>       
+            <a href="/arenas/{{arena[0]}}">
+            <img src="/static/arenaimages/{{arenas[2]}}">  <p class = "maintext">{{arena[1]}}</p></a>       
         </div>
         {%endfor%}
     </div> 
-    <div class="next_backstyling">
-    
-    {%if id > 1%}
-    <a href="/allcards/{{id-1}}"><p class="Backbutton">Back</p></a>
-    {%else%}
-    <p></p>
-    {%endif%}
-    {%if id < rarity[0][0]%}
-    <a href="/allcards/{{id+1}}"><p class="Nextbutton">Next</p></a>
-    {%endif%}
-    </div>
+
 
 
 </body>
@@ -32,36 +22,3 @@
 
 
 {% endblock %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-<head>
-    <title>Arenas</title>
-</head>
-{% extends "layout.html" %}
-{% block content %}
-<p>arenaaaaaaaaaaaaaas</p>
-{% endblock %}>
--->
-

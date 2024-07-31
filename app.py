@@ -24,7 +24,6 @@ def home():
     return render_template("home.html", title="Home")
 
 
-minimum_idarenas = 4
 
 @app.route("/arenas/<int:id>")
 def arenas(id):
@@ -33,10 +32,7 @@ def arenas(id):
         abort(404)
     if id < minimum_idarenas:
         abort(404)
-    card = connect_database("SELECT id, name, Image, description FROM Cards WHERE id = ?", (id,))
-    counters = connect_database("SELECT Cards.Name, Cards.Image FROM Counters JOIN Cards ON Counters.CounterID = Cards.id WHERE CardID = ?", (id,))
-    print(card)
-    return render_template("arenas.html", title=card[0][1], card=card[0], counters=counters)
+    return render_template("arenas.html", title=card[0][1])
 
 
 @app.route("/cardtype")
@@ -48,7 +44,7 @@ minimum_idcards = 1
 
 @app.route("/allcards/<int:id>")
 def allcards(id):
-    maximum_idcards = connect_database("SELECT MAX(id) FROM Cards")
+    maximum_idcards = connect_database("SELECT MAX(id) FROM Rarity")
     if id > maximum_idcards[0][0]:
         abort(404)
     if id < minimum_idcards:
@@ -75,7 +71,8 @@ def card(id):
 
 @app.errorhandler(404)
 def pagenotfound(e):
-    return render_template("/404.html", error=e), 404
+    return render_template("/404.html", error=e),404
+    
 
 
 if __name__ == "__main__":

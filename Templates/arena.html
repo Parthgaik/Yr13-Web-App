@@ -2,24 +2,19 @@
 {% block content %}
 
 <body>
-    
-    
-    
-    <h1 class="cardnamealign">{{card[1]}}</h1>
+
+    <h1 class="cardnamealign">{{arena[1]}}</h1>
     <div class = "singlecard">
         <div class ="boarder-colour1">  
-            <img class="cardstyling" src="/static/cardimages/{{card[2]}}"> <p class ="maintext"></p>
+            <img class="cardstyling" src="/static/arenaimages/{{card[2]}}"> <p class ="maintext"></p>
         </div>
         <div class ="boarder-colour2">
-            <div class="description"><p>{{card[3]}}</p></div>
-            {%if card[4] != 3 %}
-            <p class="counterforthiscard">Counter For This Card Are:</p>
-            {%endif%}
+            <div class="description"><p>{{arena[3]}}</p></div>
             <div class ="threecolumns">
-            {%for counter in counters%}
-                <a href="/card/{{counter[2]}}"><div class="cardcounters">
-                    {{counter[0]}}
-                    <img class="ccimagesize" src="/static/cardimages/{{counter[1]}}" alt="no image yet"> <p class ="maintext"></p>
+            {%for arena in arenas%}
+                <a href="/arena/{{arenas[2]}}"><div class="cardcounters">
+                    {{arena[0]}}
+                    <img class="ccimagesize" src="/static/arenaimages/{{counter[1]}}" alt="no image yet"> <p class ="maintext"></p>
                 </div>
                 </a>
             {%endfor%}    
@@ -27,4 +22,4 @@
         </div>
     </div>
 </body>
-{% endblock %}
+-->

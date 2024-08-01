@@ -23,16 +23,13 @@ def connect_database(statement, id=None):
 def home():
     return render_template("home.html", title="Home")
 
+minimum_idarenas = 4
 
-
-@app.route("/arenas/<int:id>")
-def arenas(id):
+@app.route("/arenas")
+def arenas():
     maximum_idarenas = connect_database("SELECT MAX(id) FROM Arena")
-    if id > maximum_idarenas[0][0]:
-        abort(404)
-    if id < minimum_idarenas:
-        abort(404)
-    return render_template("arenas.html", title=card[0][1])
+    arenas = connect_database("SELECT id, name, Image FROM Arena")
+    return render_template("arenas.html", title="Arenas", arenas=arenas)
 
 
 minimum_idarena = 4

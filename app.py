@@ -44,7 +44,9 @@ def arena(id):
     print(arena)
     return render_template("arena.html", title=arena[0][1], arena=arena[0])
 
+
 minimum_idcardtype = 1
+
 
 @app.route("/cardtype")
 def cardtype():
@@ -59,6 +61,7 @@ def cardtype():
 
 minimum_idcards = 1
 
+
 @app.route("/allcards/<int:id>")
 def allcards(id):
     maximum_idcards = connect_database("SELECT MAX(id) FROM Rarity")
@@ -67,7 +70,7 @@ def allcards(id):
     if id < minimum_idcards:
         abort(404)
     allcards = connect_database("SELECT id, name, Image FROM Cards WHERE Rarity = ?", (id,))
-    rarity= connect_database("SELECT MAX(id) FROM Rarity")
+    rarity = connect_database("SELECT MAX(id) FROM Rarity")
     return render_template("allcards.html", title="All Cards", cards=allcards, id=id, rarity=rarity)
 
 

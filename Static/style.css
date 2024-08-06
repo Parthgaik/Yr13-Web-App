@@ -37,6 +37,18 @@
   flex-wrap: wrap;
 }
 
+.roundborderimage{
+  display: flex;
+  border-radius: 70px;
+  height: 702.27px;
+  width: 526.7025px;
+  align-items: center;
+}
+
+
+/* height: 780.3px;
+width: 585.225px; */
+
 .ccimagesize{
   height:431.6px;
   width:360px;

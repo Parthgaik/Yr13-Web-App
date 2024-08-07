@@ -6,20 +6,17 @@
     <h1 class="cardnamealign">{{arena[1]}}</h1>
     <div class = "singlecard">
         <div class ="boarder-colour1">  
-            <img class="cardstyling" src="/static/arenaimages/{{card[2]}}"> <p class ="maintext"></p>
+            <img class="cardstyling" src="/static/arenaimages/{{arena[2]}}"> <p class ="maintext"></p>
         </div>
         <div class ="boarder-colour2">
             <div class="description"><p>{{arena[3]}}</p></div>
-            <div class ="threecolumns">
-            {%for arena in arenas%}
-                <a href="/arena/{{arenas[2]}}"><div class="cardcounters">
-                    {{arena[0]}}
-                    <img class="ccimagesize" src="/static/arenaimages/{{counter[1]}}" alt="no image yet"> <p class ="maintext"></p>
-                </div>
-                </a>
-            {%endfor%}    
-            </div>
+
+
+
         </div>
     </div>
 </body>
--->
+{% endblock %}
+
+
+

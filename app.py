@@ -48,14 +48,14 @@ def arena(id):
 minimum_idcardtype = 1
 
 
-@app.route("/cardtype")
-def cardtype():
+@app.route("/cardtype/<int:id>")
+def cardtype(id):
     maximum_idcardtype = connect_database("SELECT MAX(id) FROM Type")
     if id > maximum_idcardtype[0][0]:
         abort(404)
     if id < minimum_idcardtype:
         abort(404)
-    cardtype = connect_database("SELECT id, name, Description, Image FROM Type")
+    cardtype = connect_database("SELECT id, name, Description, Image FROM Type", ())
     return render_template("cardtype.html", title=cardtype[0][1], cardtype=cardtype)
 
 
@@ -78,7 +78,7 @@ minimum_idcards = 1
 
 @app.route("/card/<int:id>")
 def card(id):
-    maximum_idcards = connect_database("SELECT MAX(id) FROM Cards")
+    maximum_idcards = connect_database("SELECT MAX(?) FROM Cards", (id,))
     if id > maximum_idcards[0][0]:
         abort(404)
     if id < minimum_idcards:
@@ -92,7 +92,7 @@ def card(id):
 @app.errorhandler(404)
 def pagenotfound(e):
     return render_template("/404.html", error=e),404
-    
+
 
 
 if __name__ == "__main__":

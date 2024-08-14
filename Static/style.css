@@ -27,6 +27,13 @@
   grid-template-columns: 300px 300px 300px;
   gap: 10px;
   padding-top: 20px;
+}
+
+.twocolumns{
+  display: grid;
+  grid-template-columns: 300px 300px;
+  gap: 10px;
+  padding-top: 20px;
   border: 2px solid red
 }
 
@@ -44,10 +51,6 @@
   width: 526.7025px;
   
 }
-
-
-/* height: 780.3px;
-width: 585.225px; */
 
 .ccimagesize{
   height:431.6px;
@@ -121,7 +124,7 @@ html{
   gap: 30px;
 }
 
-.boarder-colour1{
+.border-colour1{
   border: 2px solid red;
   display: flex;
   justify-content: center;

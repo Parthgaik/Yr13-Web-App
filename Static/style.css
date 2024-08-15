@@ -34,7 +34,7 @@
   grid-template-columns: 300px 300px;
   gap: 10px;
   padding-top: 20px;
-  border: 2px solid red
+  border: 2px solid
 }
 
 .cardcounters{
@@ -85,9 +85,15 @@
   text-align: center;
 }
 
+.cardimagegridtypes{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
 
 .description{
-  font-size: xx-large;
+  font-size: x-large;
+  color: rgb(238, 238, 29);
+  font-family: Clashroyalefont;
 }
 
 .counterforthiscard{
@@ -125,7 +131,7 @@ html{
 }
 
 .border-colour1{
-  border: 2px solid red;
+  border: 2px solid;
   display: flex;
   justify-content: center;
   padding-top: 70px;
@@ -160,5 +166,5 @@ body{
 
 .cardimagegrid{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(5, 1fr);
 }

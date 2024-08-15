@@ -48,15 +48,10 @@ def arena(id):
 minimum_idcardtype = 1
 
 
-@app.route("/cardtype/<int:id>")
-def cardtype(id):
-    maximum_idcardtype = connect_database("SELECT MAX(id) FROM Type")
-    if id > maximum_idcardtype[0][0]:
-        abort(404)
-    if id < minimum_idcardtype:
-        abort(404)
-    cardtype = connect_database("SELECT id, name, Description, Image FROM Type", ())
-    return render_template("cardtype.html", title=cardtype[0][1], cardtype=cardtype)
+@app.route("/cardtype")
+def cardtype():
+    cardtype = connect_database("SELECT id, name, Description, Image FROM Type")
+    return render_template("cardtypes.html", title=cardtype[0][1], cardtype=cardtype)
 
 
 minimum_idcards = 1

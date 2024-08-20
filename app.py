@@ -57,7 +57,7 @@ def cardtype():
 @app.route("/type/<int:id>")
 def type(id):
     type = connect_database("SELECT * FROM Type WHERE id = ?", (id,))
-    return render_template("type.html",title = type[0][1] ,type = type)
+    return render_template("type.html",title = type[0][1] ,type = type[0])
 
 minimum_idcards = 1
 

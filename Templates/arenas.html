@@ -3,22 +3,24 @@
 
 
 <body>
+    
+    
     <div class = "cardimagegrid">
         {% for arena in arenas %}
         <div class="centeraligncardimage">  
             <a href="/arena/{{arena[0]}}">
-            <img src="/static/arenaimages/{{arenas[2]}}">  <p class = "maintext">{{arena[1]}}</p></a>       
+            <img src="/static/arenaimages/{{arena[2]}}">  <p class = "maintext">{{arena[1]}}</p></a>       
         </div>
         {%endfor%}
     </div> 
 
 
-
 </body>
-
+ 
 
 
 
 
 
 {% endblock %}
+

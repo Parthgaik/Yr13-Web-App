@@ -40,7 +40,7 @@ def arena(id):
         abort(404)
     if id < minimum_idarena:
         abort(404)
-    arena = connect_database("SELECT id, name, Description, Image FROM Arena WHERE id = ?", (id,))
+    arena = connect_database("SELECT id, name, Image FROM Arena WHERE id = ?", (id,))
     print(arena)
     return render_template("arena.html", title=arena[0][1], arena=arena[0])
 

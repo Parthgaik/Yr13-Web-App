@@ -40,7 +40,6 @@
 .cardcounters{
   display: flex;
   justify-content: center;
-  border: 2px solid rgb(238, 238, 29);
   flex-wrap: wrap;
 }
 
@@ -83,6 +82,7 @@
   justify-content: center;
   flex-wrap: wrap;
   text-align: center;
+  margin-bottom: 25px;
 }
 
 .cardimagegridtypes{
@@ -104,7 +104,7 @@
 .singlecard{
   display: grid;
   grid-template-columns: 300px 1200px;
-  height: 735px;
+  height: 752px;
   gap: 40px;
 }
 
@@ -167,4 +167,11 @@ body{
 .cardimagegrid{
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+
 }
+
+.cardimagegrid img{
+  width: 200px;
+  height: 200px;
+}
+

@@ -31,19 +31,6 @@ def arenas():
     return render_template("arenas.html", title="Arenas", arenas=arenas)
 
 
-minimum_idarena = 4
-
-@app.route("/arena/<int:id>")
-def arena(id):
-    maximum_idarena = connect_database("SELECT MAX(id) FROM Arena")
-    if id > maximum_idarena[0][0]:
-        abort(404)
-    if id < minimum_idarena:
-        abort(404)
-    arena = connect_database("SELECT id, name, Image FROM Arena WHERE id = ?", (id,))
-    print(arena)
-    return render_template("arena.html", title=arena[0][1], arena=arena[0])
-
 
 minimum_idcardtype = 1
 

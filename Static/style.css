@@ -32,10 +32,12 @@
 .twocolumns{
   display: grid;
   grid-template-columns: 300px 300px;
-  gap: 10px;
+  gap: 100px;
   padding-top: 20px;
-  border: 2px solid
+  border: 2px solid;
+  padding-right: 50px;
 }
+
 
 .cardcounters{
   display: flex;
@@ -43,12 +45,12 @@
   flex-wrap: wrap;
 }
 
+
 .roundborderimage{
   display: flex;
   border-radius: 70px;
   height: 702.27px;
   width: 526.7025px;
-  
 }
 
 .ccimagesize{

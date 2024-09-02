@@ -35,7 +35,7 @@
   gap: 100px;
   padding-top: 20px;
   border: 2px solid;
-  padding-right: 50px;
+  padding-left: 200px;
 }
 
 
@@ -51,6 +51,10 @@
   border-radius: 70px;
   height: 702.27px;
   width: 526.7025px;
+}
+
+.paddingleftimage{
+  padding-left: 100px;
 }
 
 .ccimagesize{

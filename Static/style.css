@@ -83,9 +83,6 @@
   width: 300px;
 }
 
-.errorpage{
-  
-}
 
 .centeraligncardimage{
   display: flex;
@@ -124,8 +121,10 @@ html{
 
 .hometext{
   font-family: Clashroyalefont;
-  color: rgb(185, 80, 218)
+  color:rgb(185, 80, 218)
 }
+
+
 
 .maintext{
   font-family: clashroyalefont;
@@ -183,5 +182,9 @@ body{
 .cardimagegrid img{
   width: 200px;
   height: 200px;
+}
+
+.navbarpadding{
+  padding-bottom: 20px;
 }
 

@@ -1,10 +1,13 @@
-from flask import Flask, render_template, abort
+'''Clash Royale Program'''
 import sqlite3
+from flask import Flask, render_template, abort
+
 
 app = Flask(__name__)
 
 
 def connect_database(statement, id=None):
+    '''Connection and cursor connect to reduce repeated code'''
     conn = sqlite3.connect("Yr13ClashRoyaleDB.db")
     cursor = conn.cursor()
     if id is not None:

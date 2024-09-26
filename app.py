@@ -64,7 +64,6 @@ def allcards(id):
     return render_template("allcards.html", title="All Cards", cards=allcards, id=id, rarity=rarity)
 
 
-minimum_idcards = 1
 
 @app.route("/card/<int:id>")
 def card(id):

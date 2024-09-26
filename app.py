@@ -6,7 +6,7 @@ from flask import Flask, render_template, abort
 app = Flask(__name__)
 
 
-def connect_database(statement, id=None):
+def connect_database(statement, id=None, fetch_all=True):
     '''Connection and cursor connect to reduce repeated code'''
     conn = sqlite3.connect("Yr13ClashRoyaleDB.db")
     cursor = conn.cursor()
@@ -15,9 +15,23 @@ def connect_database(statement, id=None):
         cursor.execute(statement, id)
     else:
         cursor.execute(statement)
-    results = cursor.fetchall()
+    if fetch_all:
+        results = cursor.fetchall()
+    else:
+        results =  cursor.fetchone()
+
     conn.close()
     return results
+
+
+def get_max_id(table_name):
+    query = f"SELECT MAX(id) FROM {table_name}"
+    result = connect_database(query, fetch_all=False)
+    if result[0] is not None:
+        return result[0]
+    else:
+        return 0
+
 
 
 @app.route("/")
@@ -49,7 +63,12 @@ def cardtype():
 @app.route("/type/<int:id>")
 def type(id):
     '''Type of card page'''
+    max_id = get_max_id("Type")
+    if id > max_id:
+        abort(404)
     type = connect_database("SELECT * FROM Type WHERE id = ?", (id,))
+    if not type:
+        abort(404)
     return render_template("type.html",title = type[0][1] ,type = type[0])
 
 minimum_idcards = 1
@@ -72,12 +91,12 @@ def allcards(id):
 @app.route("/card/<int:id>")
 def card(id):
     '''Error handler on single card page, Selecting certain information from card and taking the card counters and joining it into this page'''
-    maximum_idcards = connect_database("SELECT MAX(?) FROM Cards", (id,))
-    if id > maximum_idcards[0][0]:
-        abort(404)
-    if id < minimum_idcards:
+    max_id = get_max_id("Cards")
+    if id > max_id:
         abort(404)
     card = connect_database("SELECT id, name, Image, description, TypeID FROM Cards WHERE id = ?", (id,))
+    if not card:
+        abort(404)
     counters = connect_database("SELECT Cards.Name, Cards.Image, Counters.CounterID FROM Counters JOIN Cards ON Counters.CounterID = Cards.id WHERE CardID = ?", (id,))
     print(card)
     return render_template("card.html", title=card[0][1], card=card[0], counters=counters, id=id)

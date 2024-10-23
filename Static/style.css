@@ -39,11 +39,16 @@
   padding-left: 200px;
 }
 
+.counterforthiscard{
+  font-family: Clashroyalefont;
+}
 
 .cardcounters{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  font-family: Clashroyalefont;
+  color: rgb(238, 238, 29);
 }
 
 

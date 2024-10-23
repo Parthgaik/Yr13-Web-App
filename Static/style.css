@@ -31,12 +31,11 @@
 }
 
 .twocolumns{
-  display: grid;
-  grid-template-columns: 300px 300px;
+  display: flex;
+  /* grid-template-columns: 300px 300px; */
+  width: 100%;
   gap: 100px;
-  padding-top: 20px;
   border: 2px solid;
-  padding-left: 200px;
 }
 
 .counterforthiscard{
@@ -64,8 +63,7 @@
 }
 
 .ccimagesize{
-  height:431.6px;
-  width:360px;
+  width: 80%;
 }
 
 .next_backstyling{
@@ -85,8 +83,9 @@
 }
 
 .cardstyling{
-  height: 357px;
-  width: 300px;
+  min-width: 125px;
+  width: 80%;
+  padding-left: 20px;
 }
 
 
@@ -96,11 +95,15 @@
   flex-wrap: wrap;
   text-align: center;
   margin-bottom: 25px;
+  width: 200px;
+  padding-left: 40px;
 }
 
 .cardimagegridtypes{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .description{
@@ -115,9 +118,7 @@
 }
 
 .singlecard{
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  /* grid-template-columns: 300px 1200px; */
+  display: flex;
   height: 752px;
   gap: 40px;
 }
@@ -181,9 +182,10 @@ body{
 /*Clash Royale Data Styling*/
 
 .cardimagegrid{
-  display: grid;
   grid-template-columns: repeat(5, 1fr);
-
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .cardimagegrid img{
